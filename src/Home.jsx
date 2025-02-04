@@ -21,6 +21,7 @@ function Home() {
       const result = await res.json();
       if (result && result.data && result.data.coins) {
         setData(result.data.coins);
+        console.log(data)
       } else {
         console.error('No coins data available');
       }
@@ -55,7 +56,7 @@ function Home() {
               <img src={item.iconUrl} alt={item.name} className="w-12 h-12 mt-2 flex items-center justify-center" />
               <p className="mt-2 font-semibold">24h Volume: ${item.marketCap.toLocaleString()}</p>
               <p className="mt-2 font-semibold">Rank: {item.rank}</p>
-              <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 mt-2 font-semibold inline-block">
+              <a href={item.coinrankingUrl}  rel="noopener noreferrer" className="text-blue-500 mt-2 font-semibold inline-block">
                 Visit Exchange
               </a>
             </div>
