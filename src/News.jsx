@@ -26,24 +26,22 @@ function News() {
     }, []);
 
     return (
-        <div className="pl-20 pb-10">
-            <h1 className="text-3xl text-center font-bold mb-6 mt-6">Latest News</h1>
-            <div className="grid grid-cols-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 ">
+        <div className="pl-4 sm:pl-10 md:pl-20 pb-10">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl text-center font-bold mb-6 mt-6">Latest News</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {data.length > 0 ? (
                     data.map((item) => (
-                        
                         <div key={item.id} className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg">
                             <a href={item.link} target="_blank" rel="noopener noreferrer">
-                                <img className="rounded-t-lg w-full h-48 object-cover" src={item.imgUrl} alt={item.title} />
+                                <img className="rounded-t-lg w-full h-48 sm:h-56 md:h-64 object-cover" src={item.imgUrl} alt={item.title} />
                             </a>
                             <div className="p-5">
                                 <a href={item.link} target="_blank" rel="noopener noreferrer">
-                                    <h5 className="mb-2 text-xl font-bold text-gray-900">{item.title}</h5>
+                                    <h5 className="mb-2 text-lg sm:text-xl font-bold text-gray-900">{item.title}</h5>
                                 </a>
-                                <p className="mb-3 text-gray-700 flex">{item.description.slice(0, 100)}...</p>
-                                <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">
+                                <p className="mb-3 text-gray-700 text-sm sm:text-base flex">{item.description.slice(0, 100)}...</p>
+                                <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-3 py-2 text-sm sm:text-base font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">
                                     Read more
-                                   
                                 </a>
                             </div>
                         </div>
