@@ -1,6 +1,6 @@
 
 import './App.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 import NavBar from './NavBar.jsx'
 import Footer from './Footer.jsx'
 import News from './News.jsx'
@@ -8,7 +8,7 @@ import Exchange from './Exchanges.jsx'
 import Home from './Home.jsx'
 import Cryptocurrencies from './Cryptocurrencies.jsx'
 import Graph from './Graph.jsx'
-const router=createBrowserRouter(
+const router=createHashRouter(
   [
     {
       path:"/",
