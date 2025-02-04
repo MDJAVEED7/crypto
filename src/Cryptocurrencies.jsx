@@ -36,22 +36,23 @@ function Cryptocurrencies() {
   return (
     <>
       <div className="p-6">
-        <h1 className="font-semibold text-xl sm:text-2xl lg:text-3xl flex justify-center">Cryptocurrencies</h1> 
+        <h1 className="font-semibold flex justify-center text-2xl">Cryptocurrencies</h1> 
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 border-b-neutral-800 pl-10 pr-10 pb-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 px-4 sm:px-8 md:px-10 pb-10">
         {data && data.length > 0 ? (
           data.slice(0, 50).map((coin, index) => (
             <div 
               key={index} 
-              onClick={() => navigate('/graph', { state: { uuid: coin.uuid, name: coin.name} })} 
-              className="border p-4 rounded-lg shadow-md cursor-pointer hover:bg-gray-100 transition-all"
+              onClick={() => navigate('/graph', { state: { uuid: coin.uuid, name: coin.name } })} 
+              className="border p-4 rounded-lg shadow-md cursor-pointer hover:bg-gray-100 transition duration-300"
             >
-              <h2 className="text-xl sm:text-2xl font-semibold">{coin.name}</h2>
-              <img src={coin.iconUrl} alt={coin.name} className="w-12 h-12 mt-2 mx-auto" />
-              <p className="mt-2 text-sm sm:text-base font-semibold">24h Volume: ${coin.marketCap.toLocaleString()}</p>
-              <p className="mt-2 text-sm sm:text-base font-semibold">Rank: {coin.rank}</p>
+              <h2 className="text-xl font-semibold">{coin.name}</h2>
+              <img src={coin.iconUrl} alt={coin.name} className="w-12 h-12 mt-2 flex items-center justify-center" />
+              <p className="mt-2 font-semibold">24h Volume: ${coin.marketCap.toLocaleString()}</p>
+              <p className="mt-2 font-semibold">Rank: {coin.rank}</p>
               <a 
                 href={coin.coinrankingUrl} 
+                target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-blue-500 mt-2 font-semibold inline-block"
                 onClick={(e) => e.stopPropagation()} // Prevent the div onClick event
